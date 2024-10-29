@@ -1,0 +1,5 @@
+"vendor_log_level","log_level"
+"INFO","info"
+"ERROR","error"
+"WARNING","warn"
+"NOTICE","info"
