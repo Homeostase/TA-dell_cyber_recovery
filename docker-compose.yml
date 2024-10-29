@@ -1,0 +1,17 @@
+services:
+  splunk:
+    image: splunk/splunk:${SPLUNK_VERSION}
+    container_name: ta_dell_cyber_recovery
+    hostname: splunk
+    platform: linux/amd64
+    ports:
+      - 8000:8000
+      - 8088:8088
+      - 8089:8089
+      - 9997:9997
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=${SPLUNK_PASSWORD}
+    volumes:
+      - ./splunk_files/user-prefs.conf:/opt/splunk/etc/system/local/user-prefs.conf
+      - ./package/:/opt/splunk/etc/apps/TA-dell_cyber_recovery/
